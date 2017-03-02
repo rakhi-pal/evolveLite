@@ -19,7 +19,11 @@
     <ion-content class="menu-wrapper">
       <ion-list>
         <ion-item menu-close class="profile">
-
+          <i class="icon ion-log-out" ng-click="logout()"></i>
+          <div class="profile-pic">
+          </div>
+          <div class="name">{{user.name}}</div>
+          <div class="email">{{user.email}}</div>
         </ion-item>
         <ion-item menu-close href="#/app/kpi">
           KPI

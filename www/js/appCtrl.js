@@ -11,6 +11,7 @@ angular.module('evolveLite')
 
     // Form data for the login modal
     $scope.loginData = {};
+    $scope.user = {};
 
     // Create the login modal that we will use later
     $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -28,24 +29,37 @@ angular.module('evolveLite')
     };
 
     // Open the login modal
-    $scope.login = function () {
+    $scope.login = function() {
       $scope.modal.show();
+      $scope.loginData.password = '';
     };
 
-    // Perform the login action when the user submits the login form
-    $scope.doLogin = function () {
-      $http.post('/public/user/login', $scope.loginData, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-        .then(function (response) {
-          utils.userInfo = response.data.user;
-          utils.token = response.data.token;
-          $scope.getKpiData();
-          $scope.closeLogin();
-        });
+    $scope.logout = function(){
+      utils.token = null;
+      utils.userInfo = null;
+      $scope.login();
     };
+
+  // Perform the login action when the user submits the login form
+  $scope.doLogin = function() {
+    $http.post('/public/user/login', $scope.loginData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(function(response) {
+      $scope.loginError = false;
+      utils.userInfo = response.data.user;
+      utils.token = response.data.tokan;
+      console.log('Login jalarre....!!!!!:)');
+      $scope.user.name = response.data.user.fullName;
+      $scope.user.email = response.data.user.emailAddress;
+      $scope.getKpiData();
+      $scope.closeLogin();
+    }, function(response){
+      $scope.loginError = true;
+    });
+  };
 
     $scope.getKpiData = function () {
       var searchQueryPayload = {
@@ -77,4 +91,4 @@ angular.module('evolveLite')
           utils.avgFTR = Math.floor((totalFirstTimeResolution / utils.totalInteractionRecords) * 100);
         });
     };
-  });
+});
