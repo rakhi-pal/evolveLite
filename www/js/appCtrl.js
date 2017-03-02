@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('evolveLite')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('appCtrl', function($scope, $ionicModal, $timeout, utils, $http) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -17,6 +17,9 @@ angular.module('starter.controllers', [])
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
+    if(!utils.token){
+      $scope.login();
+    }
   });
 
   // Triggered in the login modal to close it
@@ -31,26 +34,16 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
+    $http.post('/public/user/login', $scope.loginData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(function(response) {
+      utils.userInfo = response.data.user;
+      utils.token = response.data.tokan;
+      console.log('Login jalarre....!!!!!:)');
       $scope.closeLogin();
-    }, 1000);
+    });
   };
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });

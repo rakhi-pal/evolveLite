@@ -1,0 +1,35 @@
+.login-container {
+	background-image: url("../img/WFO_Login_bg.png");
+	background-size: cover;
+}
+
+.login-container div.scroll{
+	display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.login-container form{
+	background: white;
+    margin: 0 auto;
+    width: 350px;
+    padding: 0px 20px;
+}
+
+.login-container .logo {
+	background-image: url(../img/WFO_logo.png);
+    height: 60px;
+    background-position: center;
+    background-size: 160px;
+    background-repeat: no-repeat;
+}
+
+.login-container .item{
+	margin: 0px;
+	border: 0px;
+	padding-right: 20px;
+}
+
+.login-container input{
+	border-bottom: 2px solid rgba(0,0,0,0.1);
+}
