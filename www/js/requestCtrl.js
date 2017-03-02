@@ -16,4 +16,18 @@ angular.module('evolveLite.request', [])
     };
 
     $scope.loadTimeOffRequest();
+
+    $scope.takeAction = function(request, status) {
+      request.requestStatusUpdaterUuid = utils.userInfo.id;
+      request.requestStatus = status;
+      $http.put('/schedules/timeoffrequests', request, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization':'Bearer ' + utils.token
+        }
+      })
+      .then(function(response) {
+        $scope.loadTimeOffRequest();
+      });
+    };
   });

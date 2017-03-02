@@ -36,7 +36,7 @@
               Request Date
             </div>
             <div class="value">
-              {{ request.timeOffStartDate | date }}
+              {{ request.timeOffStartDate | date }} - {{ request.timeOffEndDate | date }}
             </div>
           </div>
           <div class="flex-item divider-blocks">
@@ -44,13 +44,13 @@
               Request On
             </div>
             <div class="value">
-              {{ request.timeOffEndDate | date }}
+              {{ request.requestCreationDate | date }}
             </div>
           </div>
         </div>
       </div>
-      <span ng-show="request.requestStatus === 'PENDING'" class="approve-btn"></span>
-      <span ng-show="request.requestStatus === 'PENDING'" class="decline-btn"></span>
+      <span ng-show="request.requestStatus === 'PENDING'" class="approve-btn" ng-click="takeAction(request, 'APPROVED')"></span>
+      <span ng-show="request.requestStatus === 'PENDING'" class="decline-btn" ng-click="takeAction(request, 'DECLINED')"></span>
     </div>
   </ion-content>
 </ion-view>
