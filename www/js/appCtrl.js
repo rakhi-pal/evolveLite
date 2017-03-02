@@ -18,9 +18,9 @@ angular.module('evolveLite')
       scope: $scope
     }).then(function (modal) {
       $scope.modal = modal;
-      if (!utils.token) {
+      /*if (!utils.token) {
         $scope.login();
-      }
+      }*/
     });
 
     // Triggered in the login modal to close it
@@ -50,7 +50,7 @@ angular.module('evolveLite')
     .then(function(response) {
       $scope.loginError = false;
       utils.userInfo = response.data.user;
-      utils.token = response.data.tokan;
+      utils.token = response.data.token;
       console.log('Login jalarre....!!!!!:)');
       $scope.user.name = response.data.user.fullName;
       $scope.user.email = response.data.user.emailAddress;

@@ -40,6 +40,24 @@ angular.module('evolveLite', ['ionic'])
           }
         }
       })
+      .state('app.agentAvgHandlingTime', {
+        url: '/agentAvgHandlingTime',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/agentAvgHandlingTime.html',
+            controller: 'agentAvgHandlingTimeCtrl'
+          }
+        }
+      })
+      .state('app.agentFirstTimeHandling', {
+        url: '/agentFirstTimeHandling',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/agentFirstTimeHandling.html',
+            controller: 'agentFirstTimeHandlingCtrl'
+          }
+        }
+      })
       .state('app.ScheduleManager', {
         url: '/scheduleManager',
         views: {
