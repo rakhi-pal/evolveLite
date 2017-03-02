@@ -1,3 +1,7 @@
+.homeContainer {
+  background-color: #ebe7ea;
+}
+
 .homeContainer .aht-section {
   background-color: #7d3cc8;
 }
@@ -15,7 +19,7 @@
 }
 
 .homeContainer .section {
-  height: 150px;
+  height: 190px;
   margin-top: 10px;
 }
 
@@ -33,4 +37,6 @@
   display: flex;
   flex-direction: column;
 }
+
+.bar
 
