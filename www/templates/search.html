@@ -1,0 +1,41 @@
+<ion-view view-title="Search">
+  <ion-content class="request-container">
+    <div class="list list-inset flex-container">
+      <label class="item item-input">
+        <input type="text" placeholder="search" ng-model="searchParam.param">
+      </label>
+      <button class="button icon ion-search" ng-click="searchRequest()"></button>
+    </div>
+    <div class="card requestCard" ng-repeat="searchObj in getSearchData()">
+      <h3 class="requestPersonNameTitle">{{ searchObj.agentName_sort}}</h3>
+      <div>
+        <div class="flex-container bottom-div">
+          <div class="flex-item">
+            <div class="title">
+              Duration
+            </div>
+            <div class="value">
+              {{getCallDuration(searchObj.duration)}}
+            </div>
+          </div>
+          <div class="flex-item divider-blocks">
+            <div class="title">
+              Direction
+            </div>
+            <div class="value">
+              {{ searchObj.direction }}
+            </div>
+          </div>
+          <div class="flex-item divider-blocks">
+            <div class="title">
+              Evaluation Score
+            </div>
+            <div class="value">
+              {{ searchObj.qualityManagement ? searchObj.qualityManagement[0].score : '--' }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
