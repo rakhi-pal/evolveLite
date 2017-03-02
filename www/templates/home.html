@@ -6,26 +6,28 @@
           <img class="kpi-images" ng-src="img/Home_AHT.png">
         </div>
         <div class="flex-inner-container">
-          <div>AHT</div>
-          <div class="badge badge-assertive">{{getAvgHandlingTime()}}</div>
+          <div class="prop">AHT</div>
+          <div class="value">{{getAvgHandlingTime()}}</div>
         </div>
+        <i class="arrow ion-arrow-right-c"></i>
       </a>
       <a class="item frt-section section flex-container" href="#/app/agentFirstTimeHandling">
         <div>
           <img class="kpi-images" ng-src="img/Home_FTR.png">
         </div>
-        <div>
-          FTR
-          <span class="badge badge-assertive">{{getAvgFTR()}} %</span>
+        <div class="flex-inner-container">
+          <div class="prop">FTR</div>
+          <div class="value">{{getAvgFTR()}} %</div>
         </div>
+        <i class="arrow ion-arrow-right-c"></i>
       </a>
       <a class="item queue-section section flex-container" href="#">
         <div>
           <img class="kpi-images" ng-src="img/Home_queTime.png">
         </div>
-        <div>
-          Queue Time
-          <span class="badge badge-assertive">03:42 min</span>
+        <div class="flex-inner-container">
+          <div class="prop">Que Time</div>
+          <div class="value">03:42 min</div>
         </div>
       </a>
     </div>

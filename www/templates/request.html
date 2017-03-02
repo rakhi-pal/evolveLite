@@ -21,12 +21,17 @@
               {{request.activityCodeTitle}}
             </div>
           </div>
-          <div class="flex-item">
-
+          <div class="flex-item divider-blocks" ng-hide="request.requestStatus === 'PENDING'">
+            <div class="title">
+              Approved/Rejected By
+            </div>
+            <div class="value">
+              {{request.requestStatusUpdaterName}}
+            </div>
           </div>
         </div>
         <div class="flex-container bottom-div">
-          <div class="flex-item divider-blocks">
+          <div class="flex-item">
             <div class="title">
               Request Date
             </div>
@@ -34,7 +39,7 @@
               {{ request.timeOffStartDate | date }}
             </div>
           </div>
-          <div class="flex-item">
+          <div class="flex-item divider-blocks">
             <div class="title">
               Request On
             </div>
@@ -44,6 +49,8 @@
           </div>
         </div>
       </div>
+      <span ng-show="request.requestStatus === 'PENDING'" class="approve-btn"></span>
+      <span ng-show="request.requestStatus === 'PENDING'" class="decline-btn"></span>
     </div>
   </ion-content>
 </ion-view>

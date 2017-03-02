@@ -3,7 +3,8 @@
 }
 .card.requestCard {
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
+  position: relative;
 }
 .requestCard .requestPersonNameTitle {
   color: #007cbe;
@@ -27,7 +28,8 @@
 }
 
 .requestCard .divider-blocks {
-  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  padding-left: 10px;
 }
 
 .requestCard .bottom-div {
@@ -45,4 +47,28 @@
 .requestCard .value {
   font-size: 16px;
   color: #333;
+}
+
+.approve-btn{
+  background-image: url('../img/Accept-icon.png');
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-size: 30px;
+  background-position: center;
+  position: absolute;
+  top: 15px;
+  right: 65px;
+}
+
+.decline-btn{
+  background-image: url('../img/decline-icon.png');
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-size: 30px;
+  background-position: center;
+  position: absolute;
+  top: 15px;
+  right: 25px;
 }
