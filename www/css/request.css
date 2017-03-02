@@ -1,0 +1,48 @@
+.request-container {
+  background-color: #eeeeee;
+}
+.card.requestCard {
+  padding: 20px;
+  margin: 20px;
+}
+.requestCard .requestPersonNameTitle {
+  color: #007cbe;
+}
+
+.requestCard .request-status {
+  height: 25px;
+}
+
+.requestCard .flex-container {
+  display: flex;
+}
+
+.requestCard .average-evaluation,
+.requestCard .distribution-rate {
+}
+
+.requestCard .consumption-rate,
+.requestCard .remaining-days {
+  padding-left: 10px;
+}
+
+.requestCard .divider-blocks {
+  border-right: 1px solid #eeeeee;
+}
+
+.requestCard .bottom-div {
+  margin-top: 10px;
+}
+
+.requestCard .flex-item {
+  flex: 1;
+  margin: 0px 10px 0px 0px;
+}
+.requestCard .title {
+  font-size: 14px;
+  color: #888;
+}
+.requestCard .value {
+  font-size: 16px;
+  color: #333;
+}

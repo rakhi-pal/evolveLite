@@ -1,0 +1,49 @@
+<ion-view view-title="Request">
+  <ion-content class="request-container">
+    <div class="card requestCard" ng-repeat="request in requestData">
+      <h3 class="requestPersonNameTitle">{{ request.userName}}</h3>
+      <div ng-if="request.requestStatus === 'PENDING'">
+        <img class="request-status" ng-src="img/New-tag.png">
+      </div>
+      <div ng-if="request.requestStatus === 'APPROVED'">
+        <img class="request-status" ng-src="img/approved-tag.png">
+      </div>
+      <div ng-if="request.requestStatus === 'DECLINED'">
+        <img class="request-status" ng-src="img/New-tag.png">
+      </div>
+      <div>
+        <div class="flex-container">
+          <div class="flex-item">
+            <div class="title">
+              Activity Type
+            </div>
+            <div class="value">
+              {{request.activityCodeTitle}}%
+            </div>
+          </div>
+          <div class="flex-item">
+
+          </div>
+        </div>
+        <div class="flex-container bottom-div">
+          <div class="flex-item divider-blocks">
+            <div class="title">
+              Request Date
+            </div>
+            <div class="value">
+              {{ request.timeOffStartDate | date }}
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="title">
+              Request On
+            </div>
+            <div class="value">
+              {{ request.timeOffEndDate | date }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

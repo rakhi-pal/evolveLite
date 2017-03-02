@@ -13,6 +13,10 @@
     {
       "path": "/qm-reporting/monitor/plans",
       "proxyUrl": "https://dev.wfosaas.com/qm-reporting/monitor/plans"
+    },
+    {
+      "path": "/schedules/timeoffrequests",
+      "proxyUrl": "https://dev.wfosaas.com/schedules/timeoffrequests"
     }
   ]
 }

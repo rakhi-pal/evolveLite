@@ -58,6 +58,15 @@ angular.module('evolveLite', ['ionic', 'evolveLite.plan'])
           }
         }
       })
+      .state('app.request', {
+        url: '/request',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/request.html',
+            controller: 'requestCtrl'
+          }
+        }
+      })
       .state('app.ScheduleManager', {
         url: '/scheduleManager',
         views: {
@@ -67,7 +76,7 @@ angular.module('evolveLite', ['ionic', 'evolveLite.plan'])
           }
         }
       })
-      .state('app.PlanMonitoring', {
+      .state('app.planMonitoring', {
         url: '/planMonitoring',
         views: {
           'menuContent': {
