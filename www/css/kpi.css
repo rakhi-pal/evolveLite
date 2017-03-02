@@ -1,0 +1,12 @@
+.agent-name-panel {
+  padding-left: 5px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  color: #444444;
+}
+.avg-handling-time-panel {
+  padding-left: 5px;
+  padding-top: 3px;
+  font-size: 16px;
+  color: #666666;
+}

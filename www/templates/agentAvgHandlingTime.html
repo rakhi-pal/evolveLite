@@ -1,9 +1,9 @@
-<ion-view view-title="Contact Centre KPI's">
+<ion-view view-title="Average Handling Time">
   <ion-content>
     <div class="list">
       <a class="item" ng-repeat="agentInteraction in getAgentGroupData()">
-        Agent Name: {{agentInteraction.agentName}}
-        <span class="badge badge-assertive">{{getAgentAvgHandlingTime(agentInteraction)}}</span>
+        <div class="agent-name-panel">{{agentInteraction.agentName}}</div>
+        <div class="avg-handling-time-panel">Average Handling Time : {{getAgentAvgHandlingTime(agentInteraction)}}</div>
       </a>
     </div>
   </ion-content>

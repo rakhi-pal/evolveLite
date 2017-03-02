@@ -1,9 +1,9 @@
-<ion-view view-title="Contact Centre KPI's">
+<ion-view view-title="First Time Handling">
   <ion-content>
     <div class="list">
       <a class="item" ng-repeat="agentInteraction in getAgentGroupData()">
-        Agent Name: {{agentInteraction.agentName}}
-        <span class="badge badge-assertive">{{getAgentAvgFTR(agentInteraction)}} %</span>
+        <div class="agent-name-panel">{{agentInteraction.agentName}}</div>
+        <div class="avg-handling-time-panel">Average First Time Handling : {{getAgentAvgFTR(agentInteraction)}} %</div>
       </a>
     </div>
   </ion-content>
