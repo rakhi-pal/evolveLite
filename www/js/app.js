@@ -6,73 +6,76 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('evolveLite', ['ionic', 'evolveLite.plan'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+  .run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        cordova.plugins.Keyboard.disableScroll(true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'appCtrl'
+      }
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        StatusBar.styleDefault();
+      }
+    });
   })
-  .state('app.ScheduleManager', {
-    url: '/scheduleManager',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/scheduleManager.html',
-        controller: 'scheduleManagerCtrl'
-      }
-    }
-  })
-  .state('app.PlanMonitoring', {
-    url: '/planMonitoring',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/planMonitoring.html',
-        controller: 'planMonitoringCtrl'
-      }
-    }/*,
-    resolve: {
-      plansMonitoringdata: function($q, plansMonitoringService, $stateParams, $state, Utils, $translate) {
-        var deferred = $q.defer();
-        plansMonitoringService.getPlanDetails()
-          .then(function(data) {
-            if (data.result) {
-              deferred.reject();
-              $state.go('plansMonitoring').then(function() {
 
-              });
-            } else {
-              deferred.resolve(data);
-            }
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
 
-          }, function() {
-            deferred.reject();
-            $state.go('plansMonitoring').then(function() {
-            });
-
-          });
-        return deferred.promise;
-      }
-
-    }*/
+      .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'appCtrl'
+      })
+      .state('app.kpi', {
+        url: '/kpi',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/home.html',
+            controller: 'kpiCtrl'
+          }
+        }
+      })
+      .state('app.agentAvgHandlingTime', {
+        url: '/agentAvgHandlingTime',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/agentAvgHandlingTime.html',
+            controller: 'agentAvgHandlingTimeCtrl'
+          }
+        }
+      })
+      .state('app.agentFirstTimeHandling', {
+        url: '/agentFirstTimeHandling',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/agentFirstTimeHandling.html',
+            controller: 'agentFirstTimeHandlingCtrl'
+          }
+        }
+      })
+      .state('app.ScheduleManager', {
+        url: '/scheduleManager',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/scheduleManager.html',
+            controller: 'scheduleManagerCtrl'
+          }
+        }
+      })
+      .state('app.PlanMonitoring', {
+        url: '/planMonitoring',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/planMonitoring.html',
+            controller: 'planMonitoringCtrl'
+          }
+        }
+      });
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/kpi');
   });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/scheduleManager');
-});
