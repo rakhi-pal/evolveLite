@@ -1,5 +1,5 @@
-angular.module('evolveLite.plan', [])
-  .controller('requestCtrl', function($scope, $ionicModal, $timeout, $http, utils) {
+angular.module('evolveLite.request', [])
+  .controller('requestCtrl', function($scope, $http, utils) {
 
     $scope.requestData = {};
 

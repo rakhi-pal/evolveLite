@@ -1,7 +1,5 @@
 angular.module('evolveLite.plan', [])
-  .controller('planMonitoringCtrl', function($scope, $ionicModal, $timeout, $http, utils) {
-
-    // Form data for the login modal
+  .controller('planMonitoringCtrl', function($scope, $http, utils) {
     $scope.planMonitoringData = {};
 
     $scope.loadPlans = function() {
