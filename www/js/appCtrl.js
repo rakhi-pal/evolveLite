@@ -18,9 +18,9 @@ angular.module('evolveLite')
       scope: $scope
     }).then(function (modal) {
       $scope.modal = modal;
-      /*if (!utils.token) {
+      if (!utils.token) {
         $scope.login();
-      }*/
+      }
     });
 
     // Triggered in the login modal to close it
