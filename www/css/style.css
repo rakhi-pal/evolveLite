@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+.button.button-icon.button-clear.ion-navicon {
+  color: #007cbe;
+}
+
+.bar-stable.bar.bar-header {
+  background-color: #ffffff;
+}

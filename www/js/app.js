@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('evolveLite', ['ionic'])
+angular.module('evolveLite', ['ionic', 'evolveLite.plan'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -64,6 +64,15 @@ angular.module('evolveLite', ['ionic'])
           'menuContent': {
             templateUrl: 'templates/scheduleManager.html',
             controller: 'scheduleManagerCtrl'
+          }
+        }
+      })
+      .state('app.PlanMonitoring', {
+        url: '/planMonitoring',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/planMonitoring.html',
+            controller: 'planMonitoringCtrl'
           }
         }
       });

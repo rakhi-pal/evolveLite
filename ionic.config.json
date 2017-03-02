@@ -9,6 +9,10 @@
     {
       "path": "/searchapi/query",
       "proxyUrl": "https://dev.wfosaas.com/searchapi/query"
+    },
+    {
+      "path": "/qm-reporting/monitor/plans",
+      "proxyUrl": "https://dev.wfosaas.com/qm-reporting/monitor/plans"
     }
   ]
 }
