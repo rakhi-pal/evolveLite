@@ -1,10 +1,15 @@
-<ion-view view-title="First Time Handling">
+<ion-view view-title="First Time Resolution">
   <ion-content>
     <div class="list">
-      <a class="item" ng-repeat="agentInteraction in getAgentGroupData()">
+      <ion-checkbox ng-model="agentInteraction.needAlertForFTH" ng-repeat="agentInteraction in agentGroupData">
         <div class="agent-name-panel">{{agentInteraction.agentName}}</div>
-        <div class="avg-handling-time-panel">Average First Time Handling : {{getAgentAvgFTR(agentInteraction)}} %</div>
-      </a>
+        <div class="avg-handling-time-panel" ng-if="agentInteraction.showWarningForFTH">
+          Average First Time Resolution : <span style="color: #ff4e4e;">{{agentInteraction.agentAvgFTH}} %</span>
+        </div>
+        <div class="avg-handling-time-panel" ng-if="!agentInteraction.showWarningForFTH">
+          Average First Time Resolution : {{agentInteraction.agentAvgFTH}} %
+        </div>
+      </ion-checkbox>
     </div>
   </ion-content>
 </ion-view>

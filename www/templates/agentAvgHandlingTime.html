@@ -1,10 +1,15 @@
 <ion-view view-title="Average Handling Time">
   <ion-content>
     <div class="list">
-      <a class="item" ng-repeat="agentInteraction in getAgentGroupData()">
+      <ion-checkbox ng-model="agentInteraction.needAlertForAHT" ng-repeat="agentInteraction in agentGroupData">
         <div class="agent-name-panel">{{agentInteraction.agentName}}</div>
-        <div class="avg-handling-time-panel">Average Handling Time : {{getAgentAvgHandlingTime(agentInteraction)}}</div>
-      </a>
+        <div class="avg-handling-time-panel" ng-if="agentInteraction.showWarningForAHT">
+          Average Handling Time : <span style="color: #ff4e4e;">{{getAgentAvgHandlingTime(agentInteraction)}}</span>
+        </div>
+        <div class="avg-handling-time-panel" ng-if="!agentInteraction.showWarningForAHT">
+          Average Handling Time : {{getAgentAvgHandlingTime(agentInteraction)}}
+        </div>
+      </ion-checkbox>
     </div>
   </ion-content>
 </ion-view>

@@ -29,37 +29,36 @@ angular.module('evolveLite')
     };
 
     // Open the login modal
-    $scope.login = function() {
+    $scope.login = function () {
       $scope.modal.show();
       $scope.loginData.password = '';
     };
 
-    $scope.logout = function(){
+    $scope.logout = function () {
       utils.token = null;
       utils.userInfo = null;
       $scope.login();
     };
 
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    $http.post('/public/user/login', $scope.loginData, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(function(response) {
-      $scope.loginError = false;
-      utils.userInfo = response.data.user;
-      utils.token = response.data.token;
-      console.log('Login jalarre....!!!!!:)');
-      $scope.user.name = response.data.user.fullName;
-      $scope.user.email = response.data.user.emailAddress;
-      $scope.getKpiData();
-      $scope.closeLogin();
-    }, function(response){
-      $scope.loginError = true;
-    });
-  };
+    // Perform the login action when the user submits the login form
+    $scope.doLogin = function () {
+      $http.post('/public/user/login', $scope.loginData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(function (response) {
+          $scope.loginError = false;
+          utils.userInfo = response.data.user;
+          utils.token = response.data.token;
+          console.log('Login jalarre....!!!!!:)');
+          $scope.user.name = response.data.user.fullName;
+          $scope.user.email = response.data.user.emailAddress;
+          $scope.getKpiData();
+        }, function (response) {
+          $scope.loginError = true;
+        });
+    };
 
     $scope.getKpiData = function () {
       var searchQueryPayload = {
@@ -85,7 +84,7 @@ angular.module('evolveLite')
             obj.firstTimeResolution = Math.floor((Math.random() * 2));
             totalFirstTimeResolution = totalFirstTimeResolution + obj.firstTimeResolution;
             totalHandlingTime = totalHandlingTime + parseInt(obj.duration);
-            if((obj.userIds[0])) {
+            if ((obj.userIds[0])) {
               if (utils.agentData[obj.userIds[0]]) {
                 utils.agentData[obj.userIds[0]].agentTotalHandingTime = utils.agentData[obj.userIds[0]].agentTotalHandingTime + parseInt(obj.duration);
                 utils.agentData[obj.userIds[0]].agentTotalFTH = utils.agentData[obj.userIds[0]].agentTotalFTH + parseInt(obj.firstTimeResolution);
@@ -103,6 +102,17 @@ angular.module('evolveLite')
 
           utils.avgHandlingTime = Math.round(totalHandlingTime / utils.totalInteractionRecords);
           utils.avgFTR = Math.floor((totalFirstTimeResolution / utils.totalInteractionRecords) * 100);
+
+          angular.forEach(utils.agentData, function (obj, key) {
+            obj.agentAvgHandlingTime = Math.round(obj.agentTotalHandingTime / obj.agentInteraction.length);
+            obj.needAlertForAHT = obj.showWarningForAHT = obj.agentAvgHandlingTime > utils.avgHandlingTime;
+
+            obj.agentAvgFTH = Math.round((obj.agentTotalFTH / obj.agentInteraction.length) * 100);
+            obj.needAlertForFTH = obj.showWarningForFTH = obj.agentAvgFTH < utils.avgFTR;
+          });
+          $scope.closeLogin();
+        }, function (reason) {
+          $scope.closeLogin();
         });
     };
-});
+  });
