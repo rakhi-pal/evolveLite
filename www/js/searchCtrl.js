@@ -21,7 +21,7 @@ angular.module('evolveLite.search', [])
         "query": $scope.searchParam.param != '' ? $scope.searchParam.param : '*',
         "sortClauses": [{"field": "gmtStartTime", "order": "desc"}]
       };
-      $http.post('/searchapi/query', searchQueryPayload, {
+      $http.post('https://dev.wfosaas.com/searchapi/query', searchQueryPayload, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + utils.token

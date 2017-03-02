@@ -1,6 +1,6 @@
 angular.module('evolveLite')
 
-  .controller('appCtrl', function ($scope, $ionicModal, $timeout, utils, $http, $state) {
+  .controller('appCtrl', function ($scope, $ionicModal, $timeout, utils, $http, $state, $ionicPush) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -18,9 +18,9 @@ angular.module('evolveLite')
       scope: $scope
     }).then(function (modal) {
       $scope.modal = modal;
-      if (!utils.token) {
+      /*if (!utils.token) {
         $scope.login();
-      }
+      }*/
     });
 
     // Triggered in the login modal to close it
@@ -52,6 +52,13 @@ angular.module('evolveLite')
           utils.userInfo = response.data.user;
           utils.token = response.data.token;
           console.log('Login jalarre....!!!!!:)');
+
+          $ionicPush.register().then(function(t) {
+            return $ionicPush.saveToken(t);
+          }).then(function(t) {
+            console.log('Token saved:', t.token);
+          });
+
           $scope.user.name = response.data.user.fullName;
           $scope.user.email = response.data.user.emailAddress;
           $scope.getKpiData();
@@ -59,6 +66,12 @@ angular.module('evolveLite')
           $scope.loginError = true;
         });
     };
+
+    $scope.$on('cloud:push:notification', function(event, data) {
+      var msg = data.message;
+      //to redirect to page
+      $state.go(data.message.payload.redirectState);
+    });
 
     $scope.getKpiData = function () {
       var searchQueryPayload = {

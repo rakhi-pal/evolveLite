@@ -4,7 +4,7 @@
       <label class="item item-input">
         <input type="text" placeholder="search" ng-model="searchParam.param">
       </label>
-      <button class="button icon ion-search" ng-click="searchRequest()"></button>
+      <div class="button icon ion-search" ng-click="searchRequest()"></div>
     </div>
     <div class="card requestCard" ng-repeat="searchObj in getSearchData()">
       <h3 class="requestPersonNameTitle">{{ searchObj.agentName_sort}}</h3>

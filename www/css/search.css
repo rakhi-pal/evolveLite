@@ -1,0 +1,7 @@
+.request-container .list-inset {
+	display: flex;
+}
+
+.request-container .item-input{
+	flex: 1;
+}

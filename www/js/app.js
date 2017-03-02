@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('evolveLite', ['ionic', 'evolveLite.plan', 'evolveLite.request', 'evolveLite.search'])
+angular.module('evolveLite', ['ionic', 'ionic.cloud', 'evolveLite.plan', 'evolveLite.request', 'evolveLite.search'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -22,7 +22,7 @@ angular.module('evolveLite', ['ionic', 'evolveLite.plan', 'evolveLite.request', 
     });
   })
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $ionicCloudProvider) {
     $stateProvider
 
       .state('app', {
@@ -96,4 +96,22 @@ angular.module('evolveLite', ['ionic', 'evolveLite.plan', 'evolveLite.request', 
       });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/kpi');
+
+    $ionicCloudProvider.init({
+      "core": {
+        "app_id": "bf9a6b5b"
+      },
+      "push": {
+        "sender_id": "1008835547864",
+        "pluginConfig": {
+          "ios": {
+            "badge": true,
+            "sound": true
+          },
+          "android": {
+            "iconColor": "#343434"
+          }
+        }
+      }
+    });
   });
