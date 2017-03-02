@@ -15,17 +15,18 @@
 }
 
 .homeContainer .list {
-  margin: 15px;
+  margin: 0px 10px;
 }
 
 .homeContainer .section {
-  height: 190px;
   margin-top: 10px;
+  border-radius: 5px;
+  padding: 40px;
 }
 
 .homeContainer .flex-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 .homeContainer .kpi-images {
@@ -34,9 +35,29 @@
 }
 
 .homeContainer .flex-inner-container {
-  display: flex;
-  flex-direction: column;
+  flex: 1;
+  margin-left: 25px;
 }
 
-.bar
+.homeContainer .prop{
+  font-size: 40px;
+  color: white;
+  font-weight: 100;
+  line-height: 40px;
+}
+
+.homeContainer .value{
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
+  margin-top: 10px;
+}
+
+.homeContainer .arrow{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+}
 
