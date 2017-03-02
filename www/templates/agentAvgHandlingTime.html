@@ -1,7 +1,7 @@
 <ion-view view-title="Contact Centre KPI's">
   <ion-content>
-    <div class="list" ng-repeat="agentInteraction in getAgentGroupData()">
-      <a class="item" href="#">
+    <div class="list">
+      <a class="item" ng-repeat="agentInteraction in getAgentGroupData()">
         Agent Name: {{agentInteraction.agentName}}
         <span class="badge badge-assertive">{{getAgentAvgHandlingTime(agentInteraction)}}</span>
       </a>
