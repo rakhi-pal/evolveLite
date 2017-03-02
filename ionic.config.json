@@ -5,6 +5,10 @@
     {
       "path": "/public/user/login",
       "proxyUrl": "https://dev.wfosaas.com/public/user/login"
+    },
+    {
+      "path": "/searchapi/query",
+      "proxyUrl": "https://dev.wfosaas.com/searchapi/query"
     }
   ]
 }
