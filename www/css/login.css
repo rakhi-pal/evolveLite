@@ -34,6 +34,10 @@
 	border-bottom: 2px solid rgba(0,0,0,0.1);
 }
 
+.login-container .button.button-positive{
+    background-color: #087dbe;
+}
+
 .error-msg{
     color: #f82424;
     font-size: 12px;
