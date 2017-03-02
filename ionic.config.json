@@ -5,6 +5,10 @@
     {
       "path": "/public/user/login",
       "proxyUrl": "https://dev.wfosaas.com/public/user/login"
+    },
+    {
+      "path": "/qm-reporting/monitor/plans",
+      "proxyUrl": "https://dev.wfosaas.com/qm-reporting/monitor/plans"
     }
   ]
 }

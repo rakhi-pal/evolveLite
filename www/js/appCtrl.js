@@ -41,7 +41,7 @@ angular.module('evolveLite')
     })
     .then(function(response) {
       utils.userInfo = response.data.user;
-      utils.token = response.data.tokan;
+      utils.token = response.data.token;
       console.log('Login jalarre....!!!!!:)');
       $scope.closeLogin();
     });

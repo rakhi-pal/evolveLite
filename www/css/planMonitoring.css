@@ -1,0 +1,48 @@
+.plan-container {
+  background-color: #eeeeee;
+}
+.card.planDetailsCard {
+  padding: 20px;
+  margin: 20px;
+}
+.planDetailsCard .planNameTitle {
+  color: #007cbe;
+}
+
+.planDetailsCard .plan-status {
+  height: 25px;
+}
+
+.planDetailsCard .flex-container {
+  display: flex;
+}
+
+.planDetailsCard .average-evaluation,
+.planDetailsCard .distribution-rate {
+}
+
+.planDetailsCard .consumption-rate,
+.planDetailsCard .remaining-days {
+  padding-left: 10px;
+}
+
+.planDetailsCard .divider-blocks {
+  border-right: 1px solid #eeeeee;
+}
+
+.planDetailsCard .bottom-div {
+  margin-top: 10px;
+}
+
+.planDetailsCard .flex-item {
+  flex: 1;
+  margin: 0px 10px 0px 0px;
+}
+.planDetailsCard .title {
+  font-size: 14px;
+  color: #888;
+}
+.planDetailsCard .value {
+  font-size: 16px;
+  color: #333;
+}

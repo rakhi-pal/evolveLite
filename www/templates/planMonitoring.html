@@ -1,0 +1,52 @@
+<ion-view view-title="Plan Monitoring">
+  <ion-content class="plan-container">
+    <div class="card planDetailsCard" ng-repeat="plan in planMonitoringData">
+      <h3 class="planNameTitle">{{ plan.planName}}</h3>
+      <div ng-if="plan.status === 'ON'">
+        <img class="plan-status" ng-src="assets/On-track.png">
+      </div>
+      <div ng-if="plan.status === 'OFF'">
+        <img class="plan-status" ng-src="img/Off-Track.png">
+      </div>
+      <div>
+        <div class="flex-container">
+          <div class="flex-item divider-blocks">
+            <div class="title">
+              Distribution Rate (%)
+            </div>
+            <div class="value">
+              {{plan.distributionRate}}%
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="title">
+              Consumption Rate (%)
+            </div>
+            <div class="value">
+              {{plan.consumptionRate}}%
+            </div>
+          </div>
+        </div>
+        <div class="flex-container bottom-div">
+          <div class="flex-item">
+            <div class="title">
+              Remaining Days
+            </div>
+            <div class="value">
+              {{plan.remainingDays}}
+            </div>
+          </div>
+          <div class="flex-item divider-blocks">
+            <div class="title">
+              Average Evaluation / Day
+            </div>
+            <div class="value">
+              {{plan.avgEvalPerDay}}
+            </div>
+          </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
+
+

@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('evolveLite', ['ionic'])
+angular.module('evolveLite', ['ionic', 'evolveLite.plan'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -39,6 +39,39 @@ angular.module('evolveLite', ['ionic'])
         controller: 'scheduleManagerCtrl'
       }
     }
+  })
+  .state('app.PlanMonitoring', {
+    url: '/planMonitoring',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/planMonitoring.html',
+        controller: 'planMonitoringCtrl'
+      }
+    }/*,
+    resolve: {
+      plansMonitoringdata: function($q, plansMonitoringService, $stateParams, $state, Utils, $translate) {
+        var deferred = $q.defer();
+        plansMonitoringService.getPlanDetails()
+          .then(function(data) {
+            if (data.result) {
+              deferred.reject();
+              $state.go('plansMonitoring').then(function() {
+
+              });
+            } else {
+              deferred.resolve(data);
+            }
+
+          }, function() {
+            deferred.reject();
+            $state.go('plansMonitoring').then(function() {
+            });
+
+          });
+        return deferred.promise;
+      }
+
+    }*/
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/scheduleManager');
