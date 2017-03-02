@@ -1,3 +1,52 @@
 .menu-wrapper {
 	background: #007cbe;
 }
+
+.menu-wrapper .item-content{
+	background: #007cbe;
+	color: white;
+}
+
+.menu-wrapper .item-content.activated{
+	background: #075782;
+	color: white;
+}
+
+.menu-wrapper .item {
+	border-color: #076698;
+}
+
+.menu-wrapper .profile{
+	background-color: #007cbe;
+    padding: 20px 0px;
+}
+
+.menu-wrapper .profile-pic{
+	background-image: url(../img/WFO_profile_v0.png);
+    background-repeat: no-repeat;
+    height: 100px;
+    background-size: 100px;
+    background-position: center;
+}
+
+.menu-wrapper .profile .name {
+	text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.menu-wrapper .profile .email {
+	text-align: center;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.menu-wrapper .profile .ion-log-out {
+	position: absolute;
+    color: white;
+    font-size: 25px;
+    top: 10px;
+    left: 10px;
+    transform: rotate(180deg);
+}

@@ -13,7 +13,7 @@
 	background: white;
     margin: 0 auto;
     width: 350px;
-    padding: 0px 20px;
+    padding: 0px 20px 20px;
 }
 
 .login-container .logo {
@@ -32,4 +32,10 @@
 
 .login-container input{
 	border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.error-msg{
+    color: #f82424;
+    font-size: 12px;
+    text-align: center;
 }
