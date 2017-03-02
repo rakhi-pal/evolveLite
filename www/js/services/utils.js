@@ -7,6 +7,7 @@ angular.module('evolveLite')
     utilsObj.avgHandlingTime = 0;
     utilsObj.avgFTR = 0;
     utilsObj.searchQueryResult = null;
+    utilsObj.agentData = {};
 
     utilsObj.convertSecToMinFormat = function (input) {
       var minutes = parseInt(input / 60, 10);

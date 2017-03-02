@@ -1,5 +1,10 @@
 <ion-view view-title="Contact Centre KPI's">
   <ion-content>
-    Agent AHT
+    <div class="list" ng-repeat="agentInteraction in getAgentGroupData()">
+      <a class="item" href="#">
+        Agent Name: {{agentInteraction.agentName}}
+        <span class="badge badge-assertive">{{getAgentAvgHandlingTime(agentInteraction)}}</span>
+      </a>
+    </div>
   </ion-content>
 </ion-view>

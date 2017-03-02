@@ -85,6 +85,20 @@ angular.module('evolveLite')
             obj.firstTimeResolution = Math.floor((Math.random() * 2));
             totalFirstTimeResolution = totalFirstTimeResolution + obj.firstTimeResolution;
             totalHandlingTime = totalHandlingTime + parseInt(obj.duration);
+            if((obj.userIds[0])) {
+              if (utils.agentData[obj.userIds[0]]) {
+                utils.agentData[obj.userIds[0]].agentTotalHandingTime = utils.agentData[obj.userIds[0]].agentTotalHandingTime + parseInt(obj.duration);
+                utils.agentData[obj.userIds[0]].agentTotalFTH = utils.agentData[obj.userIds[0]].agentTotalFTH + parseInt(obj.firstTimeResolution);
+                utils.agentData[obj.userIds[0]].agentInteraction.push(obj);
+              } else {
+                utils.agentData[obj.userIds[0]] = {};
+                utils.agentData[obj.userIds[0]].agentName = obj.agentName_sort;
+                utils.agentData[obj.userIds[0]].agentInteraction = [];
+                utils.agentData[obj.userIds[0]].agentTotalHandingTime = parseInt(obj.duration);
+                utils.agentData[obj.userIds[0]].agentTotalFTH = parseInt(obj.firstTimeResolution);
+                utils.agentData[obj.userIds[0]].agentInteraction.push(obj);
+              }
+            }
           });
 
           utils.avgHandlingTime = Math.round(totalHandlingTime / utils.totalInteractionRecords);
