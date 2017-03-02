@@ -4,7 +4,7 @@ angular.module('evolveLite.request', [])
     $scope.requestData = [];
     
     $scope.loadTimeOffRequest = function() {
-      $http.get('/schedules/timeoffrequests', {
+      $http.get('https://dev.wfosaas.com/schedules/timeoffrequests', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization':'Bearer ' + utils.token
@@ -20,7 +20,7 @@ angular.module('evolveLite.request', [])
     $scope.takeAction = function(request, status) {
       request.requestStatusUpdaterUuid = utils.userInfo.id;
       request.requestStatus = status;
-      $http.put('/schedules/timeoffrequests', request, {
+      $http.put('https://dev.wfosaas.com/schedules/timeoffrequests', request, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization':'Bearer ' + utils.token

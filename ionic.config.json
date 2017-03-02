@@ -1,6 +1,6 @@
 {
   "name": "evolveLite",
-  "app_id": "",
+  "app_id": "bf9a6b5b",
   "proxies": [
     {
       "path": "/public/user/login",

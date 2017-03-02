@@ -42,7 +42,7 @@ angular.module('evolveLite')
 
     // Perform the login action when the user submits the login form
     $scope.doLogin = function () {
-      $http.post('/public/user/login', $scope.loginData, {
+      $http.post('https://dev.wfosaas.com/public/user/login', $scope.loginData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -68,7 +68,7 @@ angular.module('evolveLite')
         "sortClauses": [{"field": "gmtStartTime", "order": "desc"}]
       };
 
-      $http.post('/searchapi/query', searchQueryPayload, {
+      $http.post('https://dev.wfosaas.com/searchapi/query', searchQueryPayload, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + utils.token
