@@ -1,17 +1,32 @@
 <ion-view view-title="Contact Centre KPI's">
-  <ion-content>
+  <ion-content class="homeContainer">
     <div class="list">
-      <a class="item" href="#/app/agentAvgHandlingTime">
-        AHT
-        <span class="badge badge-assertive">{{getAvgHandlingTime()}}</span>
+      <a class="item aht-section section flex-container" href="#/app/agentAvgHandlingTime">
+        <div>
+          <img class="kpi-images" ng-src="img/Home_AHT.png">
+        </div>
+        <div class="flex-inner-container">
+          <div>AHT</div>
+          <div class="badge badge-assertive">{{getAvgHandlingTime()}}</div>
+        </div>
       </a>
-      <a class="item" href="#/app/agentFirstTimeHandling">
-        FTR
-        <span class="badge badge-assertive">{{getAvgFTR()}} %</span>
+      <a class="item frt-section section flex-container" href="#/app/agentFirstTimeHandling">
+        <div>
+          <img class="kpi-images" ng-src="img/Home_FTR.png">
+        </div>
+        <div>
+          FTR
+          <span class="badge badge-assertive">{{getAvgFTR()}} %</span>
+        </div>
       </a>
-      <a class="item" href="#">
-        Queue Time
-        <span class="badge badge-assertive">03:42 min</span>
+      <a class="item queue-section section flex-container" href="#">
+        <div>
+          <img class="kpi-images" ng-src="img/Home_queTime.png">
+        </div>
+        <div>
+          Queue Time
+          <span class="badge badge-assertive">03:42 min</span>
+        </div>
       </a>
     </div>
   </ion-content>

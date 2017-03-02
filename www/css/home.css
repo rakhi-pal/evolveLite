@@ -1,0 +1,36 @@
+.homeContainer .aht-section {
+  background-color: #7d3cc8;
+}
+
+.homeContainer .frt-section {
+  background-color: #39C44A;
+}
+
+.homeContainer .queue-section {
+  background-color: #F8A20B;
+}
+
+.homeContainer .list {
+  margin: 15px;
+}
+
+.homeContainer .section {
+  height: 150px;
+  margin-top: 10px;
+}
+
+.homeContainer .flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.homeContainer .kpi-images {
+  width: 75px;
+  height: 75px;
+}
+
+.homeContainer .flex-inner-container {
+  display: flex;
+  flex-direction: column;
+}
+
