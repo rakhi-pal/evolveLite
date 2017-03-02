@@ -10,4 +10,10 @@ angular.module('evolveLite')
     };
 
     $scope.getAgentAvgHandlingTime();
+
+    $scope.getAHT = function () {
+      if(utils.avgHandlingTime) {
+        return utils.convertSecToMinFormat(utils.avgHandlingTime);
+      }
+    }
   });
